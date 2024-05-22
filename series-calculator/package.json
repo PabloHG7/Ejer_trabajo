@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "PabloHG",
   "license": "ISC",
   "dependencies": {
     "@testing-library/react": "^15.0.7",
