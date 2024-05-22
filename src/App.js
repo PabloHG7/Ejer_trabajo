@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import InputForm from './InputForm';
+import calculateSeries from './SeriesCalculatorComponent';
+import ResultDisplay from './ResultDisplay';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [result, setResult] = useState(null);
+
+  const handleCalculate = (n) => {
+    const result = calculateSeries(n);
+    setResult(result);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Calculadora de Series Numéricas</h1>
+      <InputForm onSubmit={handleCalculate} />
+      <ResultDisplay result={result} />
     </div>
   );
-}
+};
 
 export default App;
